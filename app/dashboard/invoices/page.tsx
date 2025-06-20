@@ -7,14 +7,7 @@ import { lusitana } from '@/app/ui/fonts'
 import { InvoicesTableSkeleton } from '@/app/ui/skeletons'
 import { fetchInvoicesPages } from '@/app/lib/data'
 
-export default async function Page({
-  searchParams
-}: {
-  searchParams?: {
-    query?: string
-    page?: string
-  }
-}) {
+export default async function Page({ searchParams }: { searchParams?: Promise<{ query?: string; page?: string }> }) {
   const { query = '', page = '1' } = (await searchParams) || {}
 
   const totalPages = await fetchInvoicesPages(query)
