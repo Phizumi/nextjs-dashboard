@@ -15,8 +15,7 @@ export default async function Page({
     page?: string
   }
 }) {
-  const query = searchParams?.query || ''
-  const currentPage = Number(searchParams?.page) || 1
+  const { query = '', page = '1' } = (await searchParams) || {}
 
   const totalPages = await fetchInvoicesPages(query)
 
@@ -29,8 +28,8 @@ export default async function Page({
         <Search placeholder="Search invoices..." />
         <CreateInvoice />
       </div>
-      <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}>
-        <Table query={query} currentPage={currentPage} />
+      <Suspense key={query + page} fallback={<InvoicesTableSkeleton />}>
+        <Table query={query} currentPage={+page} />
       </Suspense>
       <div className="mt-5 flex w-full justify-center">
         <Pagination totalPages={totalPages} />
