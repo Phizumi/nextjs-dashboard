@@ -4,8 +4,7 @@
     "build": "next build",
     "dev": "next dev --turbopack",
     "start": "next start",
-    "seed": "node -r dotenv/config ./app/scripts/seed.js",
-    "lint": "next lint"
+    "seed": "node -r dotenv/config ./app/scripts/seed.js"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
