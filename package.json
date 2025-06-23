@@ -29,7 +29,9 @@
     "@types/node": "22.10.7",
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",
-    "dotenv": "^16.5.0"
+    "dotenv": "^16.5.0",
+    "eslint": "9.29.0",
+    "eslint-config-next": "15.3.4"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
